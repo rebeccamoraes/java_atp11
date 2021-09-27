@@ -41,8 +41,9 @@ public class Financiamentos {
                     System.out.println("========= Crédito Consignado =========");
                     break;
 
-                case 5:
+                case 0:
                     System.out.println("========= Aplicação finalizada =========");
+                    continua = false;
                     break;
 
                 default:
@@ -51,6 +52,19 @@ public class Financiamentos {
                     break;
             }
 
+            char resposta = '0';
+
+            while ((opcao > 0 && opcao < 5) && (resposta != 'S' && resposta != 'V')) {
+                System.out.println("Digite 'V' para voltar ao menu principal ou 'S' para sair: ");
+                resposta = scanner.nextLine().toUpperCase().charAt(0);
+
+                if (resposta == 'V') {
+                    continua = true;
+                }
+            }
+
         } while(continua);
+
+        scanner.close();
     }
 }
