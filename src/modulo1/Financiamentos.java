@@ -12,16 +12,7 @@ public class Financiamentos {
         System.out.println("============= Bradesco Financiamentos =============");
 
         do {
-            System.out.println("Menu");
-            System.out.println("1. Crédito Pessoal");
-            System.out.println("2. Crédito Imobiliário");
-            System.out.println("3. Crédito Empresarial");
-            System.out.println("4. Crédito Consignado");
-            System.out.println("0. Sair");
-            
-            System.out.print("Digite o número correspondente a opção desejada: ");
-            opcao = Short.parseShort(scanner.nextLine());
-
+            opcao = menu();
             continua = false;
 
             switch (opcao) {
@@ -66,5 +57,21 @@ public class Financiamentos {
         } while(continua);
 
         scanner.close();
+    }
+
+    static short menu () {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Menu");
+        System.out.println("1. Crédito Pessoal");
+        System.out.println("2. Crédito Imobiliário");
+        System.out.println("3. Crédito Empresarial");
+        System.out.println("4. Crédito Consignado");
+        System.out.println("0. Sair");
+        
+        System.out.print("Digite o número correspondente a opção desejada: ");
+        short opcao = Short.parseShort(scanner.nextLine());
+
+        return opcao;
     }
 }
